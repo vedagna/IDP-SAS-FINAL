@@ -18,7 +18,7 @@ const FacultyDashboard = () => {
 
   const fetchCertificates = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/student/faculty/certificates');
+      const response = await fetch('https://idp-sas-final-backend.onrender.com/api/student/faculty/certificates');
       if (!response.ok) throw new Error('Failed to fetch certificates');
 
       const data = await response.json();
@@ -47,7 +47,7 @@ const FacultyDashboard = () => {
   const handleReject = async (certId) => {
     if (window.confirm("Are you sure you want to reject this certificate? This will remove it from both faculty and student dashboards.")) {
       try {
-        const response = await fetch(`http://localhost:5000/api/student/faculty/reject/${certId}`, {
+        const response = await fetch(`https://idp-sas-final-backend.onrender.com/api/student/faculty/reject/${certId}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json'
