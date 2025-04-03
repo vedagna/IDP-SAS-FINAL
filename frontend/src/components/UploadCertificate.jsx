@@ -28,7 +28,7 @@ const UploadCertificate = () => {
       }
 
       try {
-        const response = await fetch(`http://localhost:5000/api/student/details/${email}`);
+        const response = await fetch(`https://idp-sas-final-backend.onrender.com/api/student/details/${email}`);
         if (!response.ok) throw new Error('Failed to fetch student details');
 
         const data = await response.json();
@@ -73,7 +73,7 @@ const UploadCertificate = () => {
     formData.append('eventDate', eventDate);
 
     try {
-      const response = await fetch('http://localhost:5000/api/student/upload-certificate', {
+      const response = await fetch('https://idp-sas-final-backend.onrender.com/api/student/upload-certificate', {
         method: 'POST',
         body: formData,
       });
