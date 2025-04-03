@@ -22,7 +22,7 @@ const ViewCertificates = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:5000/api/student/certificates/${email}`);
+      const response = await fetch(`https://idp-sas-final-backend.onrender.com/api/student/certificates/${email}`);
       if (!response.ok) throw new Error('Failed to fetch certificates.');
 
       const data = await response.json();
